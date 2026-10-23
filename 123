@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Virus & Friends</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #0e1621;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .chat {
+      width: 100%;
+      max-width: 420px;
+      background: #17212b;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #17212b;
+      border-bottom: 1px solid #0e1621;
+    }
+
+    .header .back {
+      font-size: 22px;
+      color: #6ab3f3;
+      line-height: 1;
+    }
+
+    .header .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #2b5278;
+    }
+
+    .header .info {
+      flex: 1;
+    }
+
+    .header .name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .header .status {
+      font-size: 13px;
+      color: #6ab3f3;
+    }
+
+    /* Message */
+    .message-wrap {
+      padding: 16px;
+      background: #0e1621;
+    }
+
+    .bubble {
+      background: #182533;
+      border-radius: 16px;
+      padding: 18px 16px;
+      max-width: 100%;
+    }
+
+    .offer {
+      margin-bottom: 18px;
+    }
+
+    .offer:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    .offer-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .offer-title img {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .offer-sub {
+      font-size: 13px;
+      color: #8b9bab;
+      margin-left: 30px;
+      margin-bottom: 8px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 30px;
+      margin-bottom: 4px;
+    }
+
+    .logo-row img {
+      height: 28px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .logo-row span {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 13px 16px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      transition: transform 0.15s, opacity 0.15s;
+      border: 1px solid transparent;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+
+    .btn img {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .btn .arrow {
+      margin-left: auto;
+      opacity: 0.7;
+      font-size: 16px;
+    }
+
+    .btn-virus {
+      background: linear-gradient(135deg, #1a3a2a, #0d2818);
+      border-color: #2e7d4f;
+    }
+
+    .btn-rubup {
+      background: linear-gradient(135deg, #3a2a1a, #2a1f0d);
+      border-color: #c9a227;
+    }
+
+    .btn-stars {
+      background: linear-gradient(135deg, #1a2a3a, #0d1a28);
+      border-color: #3a7bd5;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 12px;
+      font-size: 12px;
+      color: #5a6a7a;
+      background: #0e1621;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat">
+    <!-- Header -->
+    <div class="header">
+      <div class="back">←</div>
+      <img src="virus.png" alt="avatar" class="avatar">
+      <div class="info">
+        <div class="name">Virus & Friends</div>
+        <div class="status">online</div>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="message-wrap">
+      <div class="bubble">
+        <!-- Virus -->
+        <div class="offer">
+          <div class="offer-title">
+            <img src="virus.png" alt="">
+            Virus — бесплатные NFT
+          </div>
+          <div class="offer-sub">Жми кнопку ниже</div>
+        </div>
+
+        <!-- RubUp -->
+        <div class="offer">
+          <div class="offer-title">
+            <img src="rubup.png" alt="">
+            RubUp — бесплатный NFT
+          </div>
+          <div class="logo-row">
+            <img src="rubup.png" alt="RubUp">
+          </div>
+        </div>
+
+        <!-- Starsgram -->
+        <div class="offer">
+          <div class="offer-title">
+            <img src="starsgram.png" alt="">
+            Starsgram — VPN за копейки + дешёвые звёзды
+          </div>
+          <div class="logo-row">
+            <img src="starsgram.png" alt="Starsgram" style="height:24px;">
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <a href="https://t.me/virus_play_bot/app?startapp=openRouletteMain_inviteCodeAsy0Of16Ipb9DCmJ_adSegmentCode=freespininlineshare44" class="btn btn-virus" target="_blank">
+          <img src="virus.png" alt="">
+          Virus — открыть рулетку
+          <span class="arrow">›</span>
+        </a>
+
+        <a href="https://t.me/rubup?startapp=r_1030028355_662990" class="btn btn-rubup" target="_blank">
+          <img src="rubup.png" alt="">
+          RubUp — забрать NFT
+          <span class="arrow">›</span>
+        </a>
+
+        <a href="https://t.me/starsgram_official_bot?start=ref_1030028355" class="btn btn-stars" target="_blank">
+          <img src="starsgram.png" alt="">
+          Starsgram — VPN и звёзды
+          <span class="arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">Нажми на кнопку — откроется Telegram</div>
+  </div>
+</body>
+</html>
